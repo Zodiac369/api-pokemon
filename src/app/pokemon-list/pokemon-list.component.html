@@ -1,18 +1,19 @@
-
-<div *ngFor="let pokemon of pokemonAll">
-
-    <div class="card" style="width: 18rem;">
-        <img src="{{ pokemon.picture }}" class="card-img-top" alt="{{ pokemon.name }}">
-        <div class="card-body">
-            <h5 class="card-title">{{ pokemon.name }}</h5>
-            <p class="card-text">{{ pokemon.hp }}</p>
-            <p class="card-text">{{ pokemon.cp }}</p>
-            <p class="card-text">{{ pokemon.types }}</p>
-            <a (click)="displayPokemonOne(pokemon.id)" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#affichePokemon">Voir</a>
-            <a (click)="removePokemonOne(pokemon.id)"class="btn btn-danger">Supprimer</a>
-        </div>
-    </div>
+<div class="row">
+  <div class="col-md-4" *ngFor="let pokemon of pokemonAll">
+      <div class="card mb-4" style="width: 18rem;">
+          <img src="{{ pokemon.picture }}" class="card-img-top" alt="{{ pokemon.name }}">
+          <div class="card-body">
+              <h5 class="card-title">{{ pokemon.name }}</h5>
+              <p class="card-text">HP: {{ pokemon.hp }}</p>
+              <p class="card-text">CP: {{ pokemon.cp }}</p>
+              <p class="card-text">Type {{ pokemon.types }}</p>
+              <a (click)="displayPokemonOne(pokemon.id)" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#affichePokemon">Voir</a>
+              <a (click)="removePokemonOne(pokemon.id)" class="btn btn-danger">Supprimer</a>
+          </div>
+      </div>
+  </div>
 </div>
+
 
 <div class="modal fade text-center" id="affichePokemon" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-sm">
@@ -23,11 +24,11 @@
         </div>
         <div class="modal-body">
           <img src="{{pokemonSelected?.picture}}" style="width: 15em">
-          <p>hp:{{pokemonSelected?.hp}} </p>
-          <p>cp:{{pokemonSelected?.cp}} </p>
-          <p>types: {{pokemonSelected?.types}}</p>
+          <p>HP: {{pokemonSelected?.hp}} </p>
+          <p>CP: {{pokemonSelected?.cp}} </p>
+          <p>Type {{pokemonSelected?.types}}</p>
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button> -->
             <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
           </div>
         </div>
