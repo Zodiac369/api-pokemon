@@ -22,8 +22,10 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <img src="" style="width: 15em">
-          <p>test</p>
+          <img src="{{pokemonSelected?.picture}}" style="width: 15em">
+          <p>hp:{{pokemonSelected?.hp}} </p>
+          <p>cp:{{pokemonSelected?.cp}} </p>
+          <p>types: {{pokemonSelected?.types}}</p>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
             <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
