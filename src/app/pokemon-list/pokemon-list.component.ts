@@ -29,11 +29,7 @@ export class PokemonListComponent implements OnInit {
       getPokemonByID => {
         this.pokemonSelected = undefined;
         this.pokemonSelected = getPokemonByID;
-
-        console.log(this.pokemonSelected);
       });
   }
-
-
   
 }
