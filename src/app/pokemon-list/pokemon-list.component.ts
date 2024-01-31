@@ -31,5 +31,20 @@ export class PokemonListComponent implements OnInit {
         this.pokemonSelected = getPokemonByID;
       });
   }
-  
+
+  removePokemonOne(pokemonId: number): void {
+    this.pokemonService.deletePokemon(pokemonId)
+    .subscribe(
+      request => {
+        if (request.true == "Delete pokemon succesfuly") {
+          console.log("lE supprimé.");
+        }
+        if (request.true == "Pokémon invalid.") {
+          console.log("le Pokémon n'existe pas.");
+        }
+        if (request.true == "No have permission.") {
+          console.log("Je n'ai pas les permissions.");
+        }
+      });
+  }
 }

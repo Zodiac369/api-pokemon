@@ -9,7 +9,7 @@
             <p class="card-text">{{ pokemon.cp }}</p>
             <p class="card-text">{{ pokemon.types }}</p>
             <a (click)="displayPokemonOne(pokemon.id)" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#affichePokemon">Voir</a>
-            <a href="#" class="btn btn-danger">Supprimer</a>
+            <a (click)="removePokemonOne(pokemon.id)"class="btn btn-danger">Supprimer</a>
         </div>
     </div>
 </div>
